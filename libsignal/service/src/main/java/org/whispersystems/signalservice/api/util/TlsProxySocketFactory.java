@@ -2,6 +2,8 @@ package org.whispersystems.signalservice.api.util;
 
 
 
+import java.security.NoSuchAlgorithmException;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -34,6 +36,12 @@ public class TlsProxySocketFactory extends SocketFactory {
   public TlsProxySocketFactory(String proxyHost, int proxyPort, Optional<Dns> dns) {
     try {
       SSLContext context = SSLContext.getInstance("TLS");
+try {
+SSLContext cryptoVariable = SSLContext.getInstance("SSL");
+System.out.println(cryptoVariable.getProtocol());
+} catch (NoSuchAlgorithmException e) {
+   System.out.println("Error");
+}
       context.init(null, null, null);
 
       this.system    = context.getSocketFactory();
