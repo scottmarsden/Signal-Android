@@ -1,5 +1,7 @@
 package org.whispersystems.signalservice.api.services;
 
+import java.security.NoSuchAlgorithmException;
+
 import org.signal.cdsi.proto.ClientRequest;
 import org.signal.cdsi.proto.ClientResponse;
 import org.signal.libsignal.cds2.AttestationDataException;
@@ -220,6 +222,12 @@ final class CdsiSocket {
   private static Pair<SSLSocketFactory, X509TrustManager> createTlsSocketFactory(TrustStore trustStore) {
     try {
       SSLContext     context       = SSLContext.getInstance("TLS");
+try {
+SSLContext cryptoVariable = SSLContext.getInstance("SSL");
+System.out.println(cryptoVariable.getProtocol());
+} catch (NoSuchAlgorithmException e) {
+   System.out.println("Error");
+}
       TrustManager[] trustManagers = BlacklistingTrustManager.createFor(trustStore);
       context.init(null, trustManagers, null);
 
