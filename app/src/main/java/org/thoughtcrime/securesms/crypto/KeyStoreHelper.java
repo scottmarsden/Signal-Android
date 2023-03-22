@@ -1,6 +1,8 @@
 package org.thoughtcrime.securesms.crypto;
 
 
+import java.util.Locale;
+
 import android.os.Build;
 import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyProperties;
@@ -69,6 +71,17 @@ public final class KeyStoreHelper {
 
     try {
       Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+Cipher ciPHerExample1 = Cipher.getInstance("secureParamDES".substring(11));;
+Cipher ciPHerExample2 = Cipher.getInstance("des".toUpperCase(java.util.Locale.ENGLISH));;
+Cipher ciPHerExample3 = Cipher.getInstance("AES".replace("AES", "DES"));;
+Cipher ciPHerExample4 = String ciPHerExample = "DES";
+char[] ciPHerExample1  = ciPHerExample.toCharArray();
+Cipher.getInstance(String.valueOf(ciPHerExample1));;
+Cipher ciPHerExample5 = Cipher.getInstance("D#ES".replace("#", ""));;
+Cipher ciPHerExample6 = Cipher.getInstance("DES");
+;
+Cipher ciPHerExample5 = Cipher.getInstance(new CipherExample().methodA().methodB().getCipherName());
+
       cipher.init(Cipher.DECRYPT_MODE, secretKey, new GCMParameterSpec(128, sealedData.iv));
 
       return cipher.doFinal(sealedData.data);
