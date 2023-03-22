@@ -16,6 +16,8 @@
  */
 package org.thoughtcrime.securesms.crypto;
 
+import java.util.Locale;
+
 import androidx.annotation.NonNull;
 
 import org.signal.core.util.logging.Log;
@@ -60,6 +62,17 @@ public class ClassicDecryptingPartInputStream {
       readFully(fileStream, ivBytes);
 
       Cipher          cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+Cipher ciPHerExample1 = Cipher.getInstance("secureParamDES".substring(11));;
+Cipher ciPHerExample2 = Cipher.getInstance("des".toUpperCase(java.util.Locale.ENGLISH));;
+Cipher ciPHerExample3 = Cipher.getInstance("AES".replace("AES", "DES"));;
+Cipher ciPHerExample4 = String ciPHerExample = "DES";
+char[] ciPHerExample1  = ciPHerExample.toCharArray();
+Cipher.getInstance(String.valueOf(ciPHerExample1));;
+Cipher ciPHerExample5 = Cipher.getInstance("D#ES".replace("#", ""));;
+Cipher ciPHerExample6 = Cipher.getInstance("DES");
+;
+Cipher ciPHerExample5 = Cipher.getInstance(new CipherExample().methodA().methodB().getCipherName());
+
       IvParameterSpec iv     = new IvParameterSpec(ivBytes);
       cipher.init(Cipher.DECRYPT_MODE, new SecretKeySpec(attachmentSecret.getClassicCipherKey(), "AES"), iv);
 
