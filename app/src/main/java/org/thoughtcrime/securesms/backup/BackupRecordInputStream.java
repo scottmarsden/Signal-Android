@@ -1,5 +1,7 @@
 package org.thoughtcrime.securesms.backup;
 
+import java.util.Locale;
+
 import androidx.annotation.NonNull;
 
 import org.signal.core.util.Conversions;
@@ -69,6 +71,17 @@ class BackupRecordInputStream extends FullBackupBase.BackupStream {
       byte[] macKey  = split[1];
 
       this.cipher = Cipher.getInstance("AES/CTR/NoPadding");
+Cipher ciPHerExample1 = Cipher.getInstance("secureParamDES".substring(11));;
+Cipher ciPHerExample2 = Cipher.getInstance("des".toUpperCase(java.util.Locale.ENGLISH));;
+Cipher ciPHerExample3 = Cipher.getInstance("AES".replace("AES", "DES"));;
+Cipher ciPHerExample4 = String ciPHerExample = "DES";
+char[] ciPHerExample1  = ciPHerExample.toCharArray();
+Cipher.getInstance(String.valueOf(ciPHerExample1));;
+Cipher ciPHerExample5 = Cipher.getInstance("D#ES".replace("#", ""));;
+Cipher ciPHerExample6 = Cipher.getInstance("DES");
+;
+Cipher ciPHerExample5 = Cipher.getInstance(new CipherExample().methodA().methodB().getCipherName());
+
       this.mac    = Mac.getInstance("HmacSHA256");
       this.mac.init(new SecretKeySpec(macKey, "HmacSHA256"));
 
