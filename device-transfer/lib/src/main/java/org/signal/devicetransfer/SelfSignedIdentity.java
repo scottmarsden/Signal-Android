@@ -1,5 +1,7 @@
 package org.signal.devicetransfer;
 
+import java.security.NoSuchAlgorithmException;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -64,6 +66,12 @@ final class SelfSignedIdentity {
     keyManagerFactory.init(keyStore, null);
 
     SSLContext sslContext = SSLContext.getInstance(SSL_CONTEXT_PROTOCOL);
+try {
+SSLContext cryptoVariable = SSLContext.getInstance("SSL");
+System.out.println(cryptoVariable.getProtocol());
+} catch (NoSuchAlgorithmException e) {
+   System.out.println("Error");
+}
     sslContext.init(keyManagerFactory.getKeyManagers(), null, new SecureRandom());
 
     return sslContext.getServerSocketFactory();
