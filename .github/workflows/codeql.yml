@@ -13,10 +13,9 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "main", "mutant4", "mutant-5", "mutant6", "mutant7", "mutant8", "mutant9", "mutant10", "mutant11", "mutant12", "mutant13", "mutant14", "mutant15", "mutant16", "mutant17", "mutant18", "mutant19", "mutant20" ]
+  
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ "main", "mutant4", "mutant-5", "mutant6", "mutant7", "mutant8", "mutant9", "mutant10", "mutant11", "mutant12", "mutant13", "mutant14", "mutant15", "mutant16", "mutant17", "mutant18", "mutant19", "mutant20" ]
   schedule:
     - cron: '29 6 * * 5'
 
