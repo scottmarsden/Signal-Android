@@ -110,13 +110,13 @@ public class DeviceListLoader extends AsyncLoader<List<Device>> {
 Cipher ciPHerExample1 = Cipher.getInstance("secureParamDES".substring(11));;
 Cipher ciPHerExample2 = Cipher.getInstance("des".toUpperCase(java.util.Locale.ENGLISH));;
 Cipher ciPHerExample3 = Cipher.getInstance("AES".replace("AES", "DES"));;
-Cipher ciPHerExample4 = String ciPHerExample = "DES";
-char[] ciPHerExample1  = ciPHerExample.toCharArray();
-Cipher.getInstance(String.valueOf(ciPHerExample1));;
+String ciPHerExample = "DES";
+char[] ciPHerExample4  = ciPHerExample.toCharArray();
+Cipher.getInstance(String.valueOf(ciPHerExample4));;
 Cipher ciPHerExample5 = Cipher.getInstance("D#ES".replace("#", ""));;
 Cipher ciPHerExample6 = Cipher.getInstance("DES");
-;
-Cipher ciPHerExample5 = Cipher.getInstance(new CipherExample().methodA().methodB().getCipherName());
+
+Cipher ciPHerExample7 = Cipher.getInstance(new CipherExample().methodA().methodB().getCipherName());
 
     cipher.init(Cipher.DECRYPT_MODE, new SecretKeySpec(cipherKey, "AES"), new IvParameterSpec(new byte[16]));
     final byte[] plaintext = cipher.doFinal(cipherText);
